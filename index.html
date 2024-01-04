@@ -4,11 +4,12 @@
         <style>html{visibility: hidden;opacity:0;}</style>
 
         <meta charset="utf-8"/>
-        <link rel="icon" href ="favicon.ico" type="image/x-icon"/>
+        <!-- <link rel="icon" href ="favicon.ico" type="image/x-icon"/> -->
         <title> adi s. </title>
 
         <link rel="stylesheet" href="style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" defer></script>
+        <!-- <script src = "scripts/stripe-gradient-animation/dist/stripe-gradient.js" defer></script> -->
         <script src="scripts/animations.js" defer></script>
 
         <script>
@@ -27,9 +28,9 @@
 
         <header class="header">
             <div id="about" onclick="leftSidebar()">adi s.</div>
-            <div id="about-text"></div>
+            <canvas id="about-text"></canvas>
             <div id="date" onclick="rightSidebar()">est. 2001</div>
-            <div id="date-text"></div>
+            <canvas id="date-text"></canvas>
         </header>
 
         <main class="main" role="main">

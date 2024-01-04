@@ -8,6 +8,8 @@ function init() {
     .to("#vertical-line-left", {duration: 1.5, height: "calc(100% - 16px)", ease: "circ"}, .75)
     .to("#vertical-line-right", {duration: 1.5, height: "calc(100% - 16px)", ease: "circ"}, .75)
     .to(".footer", {duration: 1.5, bottom: "0", ease: "power3"}, 1.75)
+
+    // new Gradient({canvas: "#about-text",colors: ['#a960ee','#ff333d','#90e0ff','#ffcb57']});
 }
 
 function allowNextAnimation() {

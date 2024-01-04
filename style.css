@@ -1,0 +1,162 @@
+/* BUILT-IN OBJECTS */
+
+body {
+    background-image: url("assets/background.png");
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    font-family: "ta-yuka", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: white;
+    cursor: default;
+}
+
+header {
+    display:fixed;
+    position: fixed;
+    top: -36px;
+    right: 0;
+    left: 0;
+    height: 35px;
+    z-index: 100;
+    opacity: 1;
+    border-bottom: 1px solid white;
+}
+
+main {
+    display: block;
+}
+
+footer {
+    display: fixed; 
+    position: fixed;
+    bottom: -36px;
+    right: 0;
+    left: 0;
+    height: 35px;
+    z-index: 100;
+    opacity: 1;
+    border-top: 1px solid white;
+}
+
+/* CLASS OBJECTS */
+
+.container {
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 72px);
+    margin-top: 36px;
+    display: block;
+    opacity: 1;
+}
+
+/* ID OBJECTS */
+
+#about {
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    width: calc(25% - 10px);
+    display: block;
+    border-right: 1px solid white;
+    cursor: pointer;
+}
+
+#about-text {
+    position: fixed;
+    top: 36px;
+    width: 0;
+    height: 0;
+    margin-top: 0px;
+    z-index: 75;
+    border-right: 1px solid white;
+}
+
+#date {
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    width: calc(25% - 10px);
+    text-align: right;
+    display: block;
+    border-left: 1px solid white;
+    cursor: pointer;
+}
+
+#date-text {
+    position: fixed;
+    top: 36px;
+    right: 0;
+    width: 0;
+    height: 0;
+    margin-top: 0px;
+    z-index: 75;
+    border-left: 1px solid white;
+}
+
+#vertical-line-left {
+    position: absolute;
+    width: 25%;
+    height: 0;
+    margin-top: 8px;
+    z-index: 50;
+    display: inline-block;
+    border-right: 1px solid white;
+}
+
+#vertical-line-right {
+    position: absolute;
+    right: 0;
+    width: 25%;
+    height: 0;
+    margin-top: 8px;
+    z-index: 50;
+    display: inline-block;
+    border-left: 1px solid white;
+}
+
+#location {
+    position: absolute;
+    bottom: 6px;
+    left: 10px;
+    width: 17%;
+    display: block;
+    border-right: 1px solid white;
+}
+
+#subject {
+    position: absolute;
+    bottom: 6px;
+    left: 17%;
+    width: 33%;
+    text-align: center;
+    display: block;
+    border-right: 1px solid white;
+}
+
+#resume {
+    position: absolute;
+    bottom: 6px;
+    right: 17%;
+    width: 33%;
+    text-align: center;
+    display: block;
+}
+
+#contact {
+    position: absolute;
+    bottom: 6px;
+    right: 10px;
+    width: 17%;
+    text-align: right;
+    display: block;
+    border-left: 1px solid white;
+}
+
+html {
+    visibility: visible;
+    opacity: 1;
+}

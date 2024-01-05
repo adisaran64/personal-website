@@ -7,10 +7,10 @@
         <!-- <link rel="icon" href ="favicon.ico" type="image/x-icon"/> -->
         <title> adi s. </title>
 
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="assets/css/style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" defer></script>
-        <script src="scripts/color-gradient/dist/stripe-gradient.js" defer></script>
-        <script src="scripts/animations.js" defer></script>
+        <script src="assets/js/stripe-gradient.js" defer></script>
+        <script src="assets/js/animations.js" defer></script>
 
         <script>
             (function(d) {
@@ -28,9 +28,13 @@
 
         <header class="header">
             <div id="about" onclick="leftSidebar()">adi s.</div>
-            <canvas id="about-text"></canvas>
-            <div id="date" onclick="rightSidebar()">est. 2001</div>
-            <canvas id="date-text"></canvas>
+            <div id="about-sidebar">
+                <canvas id="left-gradient"></canvas>
+            </div>
+            <div id="gallery" onclick="rightSidebar()">est. 2001</div>
+            <div id="gallery-sidebar">
+                <canvas id="right-gradient"></canvas>
+            </div>
         </header>
 
         <main class="main" role="main">

@@ -9,8 +9,8 @@ function init() {
     .to("#vertical-line-right", {duration: 1.5, height: "calc(100% - 16px)", ease: "circ"}, .75)
     .to(".footer", {duration: 1.5, bottom: "0", ease: "power3"}, 1.75)
 
-    new Gradient({canvas: "#about-text", colors: ['#a960ee','#ff333d','#90e0ff','#ffcb57']})
-    new Gradient({canvas: "#date-text", colors: ['#a960ee','#ff333d','#90e0ff','#ffcb57']})
+    new Gradient({canvas: "#left-gradient", colors: ['#240b36', '#6f0000', '#03001e']})
+    new Gradient({canvas: "#right-gradient", colors: ['#3a2f6b','#41a0ae','#3ec995']})
 }
 
 function allowNextAnimation() {
@@ -26,23 +26,25 @@ function openFooter() {
 }
 
 function openLeftSidebar() {
-    gsap.to("#about-text", {duration: 2, width: "25%", height: "calc(100% - 36px)", ease: "power3"})
-    gsap.to(".container", {duration: 1.75, marginLeft: "25%", height: "100%", ease: "expoScale", onComplete: allowNextAnimation})
+    gsap.to("#about-sidebar", {duration: 2, width: "25%", height: "calc(100% - 36px)", ease: "power3"})
+    gsap.to(".container", {duration: 1.75, marginLeft: "25%", height: "100%", ease: "expoScale"})
     gsap.to("#vertical-line-left", {duration: 1.75, marginTop: "0", ease: "circ"})
     gsap.to("#vertical-line-right", {duration: 1.75, marginTop: "0", ease: "circ"})
+    gsap.to("#left-gradient", {duration: 1, delay: 1.75, opacity: 1, onComplete: allowNextAnimation})
     leftSidebarOpen = true;
 }
 
 function openRightSidebar() {
-    gsap.to("#date-text", {duration: 2, width: "25%", height: "calc(100% - 36px)", ease: "power3"})
-    gsap.to(".container", {duration: 1.75, marginLeft: "-25%", height: "100%", ease: "expoScale", onComplete: allowNextAnimation})
+    gsap.to("#gallery-sidebar", {duration: 2, width: "25%", height: "calc(100% - 36px)", ease: "power3"})
+    gsap.to(".container", {duration: 1.75, marginLeft: "-25%", height: "100%", ease: "expoScale"})
     gsap.to("#vertical-line-left", {duration: 1.75, marginTop: "0", ease: "circ"})
     gsap.to("#vertical-line-right", {duration: 1.75, marginTop: "0", ease: "circ"})
+    gsap.to("#right-gradient", {duration: 1, delay: 1.75, opacity: 1, onComplete: allowNextAnimation})
     rightSidebarOpen = true;
 }
 
 function closeLeftSidebar() {
-    gsap.to("#about-text", {duration: 1.85, width: "0", height: "0", ease: "power3"},)
+    gsap.to("#about-sidebar", {duration: 1.85, width: "0", height: "0", ease: "power3"},)
     gsap.to(".container", {duration: 1.75, marginLeft: "0", height: "calc(100% - 72px)", ease: "expoScale", onComplete: allowNextAnimation})
     gsap.to("#vertical-line-left", {duration: 1.75, marginTop: "8px", ease: "circ"})
     gsap.to("#vertical-line-right", {duration: 1.75, marginTop: "8px", ease: "circ"})
@@ -50,7 +52,7 @@ function closeLeftSidebar() {
 }
 
 function closeRightSidebar() {
-    gsap.to("#date-text", {duration: 1.85, width: "0", height: "0", ease: "power3"},)
+    gsap.to("#gallery-sidebar", {duration: 1.85, width: "0", height: "0", ease: "power3"},)
     gsap.to(".container", {duration: 1.75, marginLeft: "0", height: "calc(100% - 72px)", ease: "expoScale", onComplete: allowNextAnimation})
     gsap.to("#vertical-line-left", {duration: 1.75, marginTop: "8px", ease: "circ"})
     gsap.to("#vertical-line-right", {duration: 1.75, marginTop: "8px", ease: "circ"})
@@ -62,14 +64,13 @@ function leftSidebar() {
         inAnimation = true
         if (!leftSidebarOpen) {
             if (!rightSidebarOpen) {
-                closeFooter()
+                closeFooter();
+                openLeftSidebar();
             } else {
-                closeRightSidebar();
+                gsap.to("#right-gradient", {duration:1, opacity: 0, onComplete: () => {closeRightSidebar(), openLeftSidebar();}})
             }
-            openLeftSidebar()
         } else {
-            closeLeftSidebar()
-            openFooter()
+            gsap.to("#left-gradient", {duration:1, opacity: 0, onComplete: () => {closeLeftSidebar(), openFooter();}})
         }
     }
 }
@@ -80,13 +81,12 @@ function rightSidebar() {
         if (!rightSidebarOpen) {
             if (!leftSidebarOpen) {
                 closeFooter()
+                openRightSidebar()
             } else {
-                closeLeftSidebar()
+                gsap.to("#left-gradient", {duration:1, opacity: 0, onComplete: () => {closeLeftSidebar(), openRightSidebar();}})
             }
-            openRightSidebar()
         } else {
-            closeRightSidebar()
-            openFooter()
+            gsap.to("#right-gradient", {duration:1, opacity: 0, onComplete: () => {closeRightSidebar(), openFooter();}})
         }
     }
 }

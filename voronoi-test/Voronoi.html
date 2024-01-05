@@ -6,12 +6,18 @@
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="paper-full.js"></script>
     <script type="text/javascript" src="rhill-voronoi-core.js"></script>
+            <!-- var gradient = new Gradient(['yellow', 'red', 'blue']);
+            var gradientColor = new Color(gradient, path.firstSegment.point, path.lastSegment.point)
+            path.fillColor = gradientColor (BEFORE WE RETURN PATH)-->
     <script type="text/paperscript" canvas="canvas">
         var voronoi = new Voronoi();
         var sites = generateBeeHivePoints(view.size / 200, true);
+        <!-- can change size of blobs by changing value from 200 above -->
         var bbox, diagram;
         var oldSize = view.size;
-        var spotColor = new Color('red');
+
+        <!-- trying to change colors -->
+        var spotColor = new Color('white');
         var mousePos = view.center;
         var selected = false;
 

@@ -1449,3 +1449,4 @@ Voronoi.prototype.compute = function(sites, bbox) {
 
 	return result;
 	};
+	

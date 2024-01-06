@@ -10,6 +10,9 @@
         <link rel="stylesheet" href="assets/css/style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" defer></script>
         <script src="assets/js/stripe-gradient.js" defer></script>
+        <script type="text/javascript" src="assets/js/paper-full.js" defer></script>
+        <script type="text/javascript" src="assets/js/rhill-voronoi-core.js" defer></script>
+        <script type="text/paperscript" canvas="centerfold" src="assets/js/render-voronoi.js" defer></script>
         <script src="assets/js/animations.js" defer></script>
 
         <script>
@@ -25,7 +28,6 @@
 
     </head>
     <body>
-
         <header class="header">
             <div id="about" onclick="leftSidebar()">adi s.</div>
             <div id="about-sidebar">
@@ -39,6 +41,7 @@
 
         <main class="main" role="main">
             <div class="container">
+                <canvas id="centerfold" resize></canvas>
                 <div id="vertical-line-left"></div>
                 <div id="vertical-line-right"></div>
             </div>

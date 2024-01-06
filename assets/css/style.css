@@ -42,6 +42,11 @@ footer {
     border-top: 1px solid white;
 }
 
+canvas[resize] {
+    width: 100%;
+    height: 100%;
+}
+
 /* CLASS OBJECTS */
 
 .container {
@@ -76,6 +81,7 @@ footer {
 }
 
 #left-gradient {
+    display: none;
     position: fixed;
     width: 25%;
     height: calc(100% - 36px);
@@ -106,6 +112,7 @@ footer {
 }
 
 #right-gradient {
+    display: none;
     position: fixed;
     right: 0;
     width: 25%;
@@ -114,25 +121,9 @@ footer {
     opacity: 0;
 }
 
-#vertical-line-left {
-    position: absolute;
-    width: 25%;
-    height: 0;
-    margin-top: 8px;
-    z-index: 50;
-    display: inline-block;
-    border-right: 1px solid white;
-}
-
-#vertical-line-right {
-    position: absolute;
-    right: 0;
-    width: 25%;
-    height: 0;
-    margin-top: 8px;
-    z-index: 50;
-    display: inline-block;
-    border-left: 1px solid white;
+#centerfold {
+    opacity: 0;
+    cursor: none;
 }
 
 #location {

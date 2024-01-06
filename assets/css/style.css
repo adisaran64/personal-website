@@ -65,7 +65,8 @@ footer {
     cursor: pointer;
 }
 
-#about-text {
+
+#about-sidebar {
     position: fixed;
     top: 36px;
     width: 0;
@@ -75,7 +76,15 @@ footer {
     border-right: 1px solid white;
 }
 
-#date {
+#left-gradient {
+    position: fixed;
+    width: 25%;
+    height: calc(100% - 36px);
+    z-index: 75;
+    opacity: 0;
+}
+
+#gallery {
     position: absolute;
     top: 9px;
     right: 10px;
@@ -86,7 +95,8 @@ footer {
     cursor: pointer;
 }
 
-#date-text {
+
+#gallery-sidebar {
     position: fixed;
     top: 36px;
     right: 0;
@@ -95,6 +105,15 @@ footer {
     margin-top: 0px;
     z-index: 75;
     border-left: 1px solid white;
+}
+
+#right-gradient {
+    position: fixed;
+    right: 0;
+    width: 25%;
+    height: calc(100% - 36px);
+    z-index: 75;
+    opacity: 0;
 }
 
 #vertical-line-left {

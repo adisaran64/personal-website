@@ -80,15 +80,6 @@ canvas[resize] {
     border-right: 1px solid white;
 }
 
-#left-gradient {
-    display: none;
-    position: fixed;
-    width: 25%;
-    height: calc(100% - 36px);
-    z-index: 75;
-    opacity: 0;
-}
-
 #gallery {
     position: absolute;
     top: 9px;
@@ -109,16 +100,6 @@ canvas[resize] {
     margin-top: 0px;
     z-index: 75;
     border-left: 1px solid white;
-}
-
-#right-gradient {
-    display: none;
-    position: fixed;
-    right: 0;
-    width: 25%;
-    height: calc(100% - 36px);
-    z-index: 75;
-    opacity: 0;
 }
 
 #centerfold {

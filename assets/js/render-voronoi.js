@@ -1,6 +1,3 @@
-globals.renderDiagram = renderDiagram;
-globals.changeColor = changeColor;
-
 var voronoi = new Voronoi();
 var sites = generateBeeHivePoints(view.size / 225, true);
 
@@ -8,9 +5,6 @@ var bbox, diagram;
 var oldSize = view.size;
 
 var spotColor = new Color("white");
-var leftGradient = new Gradient(globals.leftColors);
-var rightGradient = new Gradient(globals.rightColors);
-var useGradient = "";
 var mousePos = view.center;
 var selected = false;
 
@@ -48,17 +42,6 @@ function renderDiagram() {
                 }
             }
         }
-    }
-}
-
-function changeColor() {
-    if (document.getElementById("centerfold").title == "color-left") {
-        useGradient = "left";
-    } else if (document.getElementById("centerfold").title == "color-right") {
-        useGradient = "right";
-    } else {
-        useGradient = "";
-        spotColor = new Color("white")
     }
 }
 
@@ -112,12 +95,6 @@ function createPath(points, center) {
     }
     path.scale(0.95);
     removeSmallBits(path);
-
-    if (useGradient == "left") {
-        path.fillColor = new Color(leftGradient, path.firstSegment.point, path.lastSegment.point)
-    } else if (useGradient == "right") {
-        path.fillColor = new Color(rightGradient, path.firstSegment.point, path.lastSegment.point)
-    }
     return path;
 }
 

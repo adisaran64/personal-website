@@ -1,19 +1,18 @@
 <!doctype html>
 <html lang="en-US">
     <head>
-        <style>html{visibility: hidden;opacity:0;}</style>
 
+        <style>html{visibility: hidden; opacity: 0;}</style>
         <meta charset="utf-8"/>
         <!-- <link rel="icon" href ="favicon.ico" type="image/x-icon"/> -->
         <title> adi s. </title>
 
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style.css" defer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" defer></script>
         <script type="text/javascript" src="assets/js/paper-full.js" defer></script>
         <script type="text/javascript" src="assets/js/rhill-voronoi-core.js" defer></script>
         <script type="text/paperscript" canvas="centerfold" src="assets/js/render-voronoi.js" defer></script>
         <script src="assets/js/main.js" defer></script>
-
         <script>
             (function(d) {
               var config = {
@@ -24,22 +23,56 @@
               h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
             })(document);
         </script>
-
+        
     </head>
     <body>
+
         <header class="header">
             <div id="about" onclick="leftSidebar()">adi s.</div>
-            <div id="about-sidebar"></div>
+            <div id="about-sidebar">
+                <div id="about-overview">
+                    <p>I am a recent Berkeley graduate holding degrees in Applied Mathematics and Computer Science.
+                        Thus far, I have had an assortment of experiences writing code as an undergraduate researcher, software engineering intern, and blockchain engineer.
+                        My programming expertise lies in Python, Golang, Java, JavaScript, and C in Linux/Unix environments;
+                        however, I am also capable of learning and mastering new tech stacks quickly.</p>
+                    <p>
+                        In my free time, I enjoy:
+                        <ul>
+                            <li>travel (I've lived everywhere, from Tokyo to Los Angeles)</li>
+                            <li>reading (check out my book list)</li>
+                            <li>collecting vinyls (and reviewing music)</li>
+                            <li>teaching (I work part-time as an after-school math instructor)</li>
+                        </ul>
+                    </p>
+                    <p>Currently, I reside in Santa Rosa, California.
+                        I am looking for early-career opportunities in software engineering and/or quantitative analysis anywhere around the globe.
+                        Feel free to reach out.</p>
+                </div>
+                <hr class="hr">
+                <div id="contact-overview">
+                    <p>GitHub: adisaran64</p>
+                    <p>LinkedIn: adisaran64</p>
+                    <p>E-Mail: adisaran64@gmail.com</p>
+                    <p>Phone: +1 862-485-6009</p>
+                </div>
+                <hr class="hr">
+                <section>
+                    <div class="scroll">
+                        <div id="name1">Aditya Saravanan&nbsp;</div>
+                        <div id="name2">Aditya Saravanan&nbsp;</div>
+                    </div>
+                </section>
+                <hr class="hr">
+            </div>
             <div id="gallery" onclick="rightSidebar()">est. 2001</div>
             <div id="gallery-sidebar"></div>
         </header>
 
         <main class="main" role="main">
-            <div class="container">
+            <div id="container">
                 <canvas id="centerfold" resize></canvas>
             </div>
         </main>
-
 
         <footer class="footer">
             <div id="location">santa rosa, ca</div>
@@ -47,6 +80,7 @@
             <div id="resume">resume</div>
             <div id="contact">contact</div>
         </footer>
+
     </body>
 
 </html>

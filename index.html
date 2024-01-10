@@ -28,9 +28,9 @@
     <body>
 
         <header class="header">
-            <div id="about" onclick="leftSidebar()">adi s.</div>
+            <div id="about" onclick="leftSidebarTrigger()">adi s.</div>
             <div id="about-sidebar">
-                <div id="about-overview">
+                <div id="about-overview" class="about-sidebar-container">
                     <p>I am a recent Berkeley graduate holding degrees in Applied Mathematics and Computer Science.
                         Thus far, I have had an assortment of experiences writing code as an undergraduate researcher, software engineering intern, and blockchain engineer.
                         My programming expertise lies in Python, Golang, Java, JavaScript, and C in Linux/Unix environments;
@@ -45,11 +45,11 @@
                         </ul>
                     </p>
                     <p>Currently, I reside in Santa Rosa, California.
-                        I am looking for early-career opportunities in software engineering and/or quantitative analysis anywhere around the globe.
+                        I am seeking out early-career opportunities in software engineering and/or quantitative analysis anywhere around the globe.
                         Feel free to reach out.</p>
                 </div>
                 <hr class="hr">
-                <div id="contact-overview">
+                <div id="contact-overview" class="about-sidebar-container">
                     <p>GitHub: adisaran64</p>
                     <p>LinkedIn: adisaran64</p>
                     <p>E-Mail: adisaran64@gmail.com</p>
@@ -57,15 +57,20 @@
                 </div>
                 <hr class="hr">
                 <section>
-                    <div class="scroll">
+                    <div class="scroll about-sidebar-container">
                         <div id="name1">Aditya Saravanan&nbsp;</div>
                         <div id="name2">Aditya Saravanan&nbsp;</div>
                     </div>
                 </section>
                 <hr class="hr">
             </div>
-            <div id="gallery" onclick="rightSidebar()">est. 2001</div>
-            <div id="gallery-sidebar"></div>
+
+            <div id="gallery" onclick="rightSidebarTrigger()">est. 2001</div>
+            <div id="gallery-sidebar">
+                    <img id="picture" class="gallery-sidebar-container" src="assets/images/current.webp" draggable=false>
+                    <p id="caption" class="gallery-sidebar-container">Point Reyes Station, California<br>2023</p>
+                    <img id="signature" class="gallery-sidebar-container" src="assets/images/signature.svg" draggable=false>
+            </div>
         </header>
 
         <main class="main" role="main">

@@ -1,9 +1,10 @@
 var tl = gsap.timeline();
 
 const container = document.getElementById("container");
+// const picture = document.getElementById("picture");
 const scrollNameElements = [document.getElementById("name1"), document.getElementById("name2")];
 const leftSidebarElements = ["#about-overview", "#contact-overview", ".scroll"];
-const rightSidebarElements =[];
+const rightSidebarElements =["#picture", "#caption", "#signature"];
 
 var inAnimation = false;
 var leftSidebarOpen = false;
@@ -31,15 +32,15 @@ function closeFooter() {
 
 function openFooter() {
     gsap.to(".footer", {duration: 1, delay: 1.5, bottom: "0", ease: "power3"});
-    gsap.to("#centerfold", {duration: 1, delay: 1.5, opacity: 1});
+    gsap.to("#centerfold", {duration: 1, delay: 1.5, opacity: 1, onComplete: allowNextAnimation});
 }
 
 function openLeftSidebar() {
     container.style.marginLeft = "25%"; container.style.height = "100%";
     scrollNameElements[0].style.animationPlayState = "running";
     scrollNameElements[1].style.animationPlayState = "running";
-
     gsap.to("#about-sidebar", {duration: 1.5, width: "25%", height: "calc(100% - 36px)", ease: "power3"});
+    
     gsap.to(leftSidebarElements, {duration: .875, delay: 1.5, opacity: 1});
     gsap.to(".hr", {duration: .875, delay: 1.5, width: "calc(100% - 1px)", opacity: 1, ease: "power3"});
     gsap.to("#centerfold", {duration: .875, delay: 1.5, opacity: 1, onComplete: allowNextAnimation});
@@ -51,7 +52,7 @@ function openRightSidebar() {
     container.style.marginLeft = "-25%"; container.style.height = "100%";
     gsap.to("#gallery-sidebar", {duration: 1.5, width: "25%", height: "calc(100% - 36px)", ease: "power3"});
 
-    // right elements go here, duration .875, delay 1.5
+    gsap.to(rightSidebarElements, {duration: .875, delay: 1.5, opacity: 1});
     gsap.to("#centerfold", {duration: .875, delay: 1.5, opacity: 1, onComplete: allowNextAnimation});
 
     rightSidebarOpen = true;
@@ -61,13 +62,13 @@ function closeLeftSidebar() {
     container.style.marginLeft = "0"; container.style.height = "calc(100% - 72px)";
     scrollNameElements[0].style.animationPlayState = "paused";
     scrollNameElements[1].style.animationPlayState = "paused";
-    gsap.to("#about-sidebar", {duration: 1.5, width: "0", height: "0", ease: "power3", onComplete: allowNextAnimation});
+    gsap.to("#about-sidebar", {duration: 1.5, width: "0", height: "0", ease: "power3"});
     leftSidebarOpen = false;
 }
 
 function closeRightSidebar() {
     container.style.marginLeft = "0"; container.style.height = "calc(100% - 72px)";
-    gsap.to("#gallery-sidebar", {duration: 1.5, width: "0", height: "0", ease: "power3", onComplete: allowNextAnimation});
+    gsap.to("#gallery-sidebar", {duration: 1.5, width: "0", height: "0", ease: "power3"});
     rightSidebarOpen = false;
 }
 
@@ -76,7 +77,7 @@ function centerfoldHandling(func1, func2) {
         gsap.to(leftSidebarElements, {duration: .875, opacity: 0});
         gsap.to(".hr", {duration: .875, width: 0, opacity: 0, ease: "power3"});
     } else {
-        // put 
+        gsap.to(rightSidebarElements, {duration: .875, opacity: 0});
     }
     gsap.to("#centerfold", {duration: .875, opacity: 0, onComplete: () => {func1(), func2();}});
 }

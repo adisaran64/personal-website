@@ -190,6 +190,35 @@ section .scroll div:nth-child(2) {
     border-left: 1px solid white;
 }
 
+#picture {
+    display: block;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 85px;
+    border: 1px dotted white;
+    opacity: 0;
+}
+
+#caption {
+    display: block;
+    margin-top: 5px;
+    margin-right: 5%;
+    font-family: "oradano-mincho-gsrr", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: right;
+    line-height: 20px;
+    opacity: 0;
+}
+
+#signature {
+    display: block;
+    width: 65%;
+    margin-left: 50%;
+    margin-top: 60px;
+}
+
 #centerfold {
     opacity: 0;
     cursor: none;

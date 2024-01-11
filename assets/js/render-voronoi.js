@@ -1,5 +1,5 @@
 var voronoi = new Voronoi();
-var sites = generateBeeHivePoints(view.size / 225, true);
+var sites = generateBeeHivePoints(view.size / 250, true);
 
 var bbox, diagram;
 var oldSize = view.size;

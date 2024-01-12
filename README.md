@@ -8,4 +8,4 @@ Built with HTML, CSS, and JavaScript, including:
 - [Raymond Hill's JavaScript implementation](http://www.raymondhill.net/voronoi/rhill-voronoi.html) of Steven J. Fortune's algorithm to compute [Voronoi diagrams](https://en.wikipedia.org/wiki/Voronoi_diagram)
 - open-source typefaces [Neue Machina](https://pangrampangram.com/products/neue-machina), [Oradano Mincho GSRR](https://www.asahi-net.or.jp/~sd5a-ucd/freefonts/Oradano-Mincho/), and [Terminal Grotesque](https://velvetyne.fr/fonts/terminal-grotesque/)
 
-Live at [adi-s.com](). Last updated January 12, 2024.
+Live at [adi-s.com](https://adi-s.com). Last updated January 12, 2024.

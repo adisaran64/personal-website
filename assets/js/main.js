@@ -177,6 +177,15 @@ function rightSidebarTrigger() {
 // LOAD, INIT
 
 function init() {
+    const setFavicon = () => {
+        const favicon = document.querySelector('link[rel="icon"]');
+        favicon.href = (window.matchMedia('(prefers-color-scheme: dark)').matches)
+                        ? 'assets/images/dark-mode-favicon.png'
+                        : 'assets/images/light-mode-favicon.png';
+    };
+
+    setFavicon();
+
     gsap.defaults({ease: "none"});
 
     tl.to(".header", {duration: 1.25, top: "0", ease: "power3"})
@@ -187,6 +196,7 @@ function init() {
     scrollNameElements[1].style.animationPlayState = "paused";
 
     window.addEventListener("resize", handleResize)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setFavicon);
 }
 
 window.addEventListener("load", function(event) {

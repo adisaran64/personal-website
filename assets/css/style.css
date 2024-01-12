@@ -10,6 +10,11 @@
     src: url("../fonts/PPNeueMachina-InktrapRegular.otf");
 }
 
+@font-face {
+    font-family: "oradano-mincho-gsrr";
+    src: url("../fonts/OradanoGSRR.ttf");
+}
+
 /* HTML OBJECTS */
 
 body {
@@ -18,6 +23,7 @@ body {
     left: 0;
     padding: 0;
     margin: 0;
+    font-family: "neuemachina-inktrapregular", sans-serif;
     color: white;
     cursor: default;
 }

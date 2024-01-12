@@ -190,8 +190,9 @@ function init() {
 }
 
 window.addEventListener("load", function(event) {
-    if (this.window.innerHeight < 100 || this.window.innerWidth < 250) {
-        this.document.body.innerHTML = "Page not accessible on small screens.";
+    if (this.window.innerWidth < 250 || this.window.innerHeight < 100) {
+        this.document.getElementById("body").style.marginLeft = "10px"; this.document.getElementById("body").style.marginTop = "10px";
+        this.document.body.innerHTML = "Page content not accessible on small screens. Please increase your viewport dimensions to be greater than 250px by 100px and reload the page.";
     } else {
         init();
     }

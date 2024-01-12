@@ -5,6 +5,16 @@
     src: url("../fonts/terminal-grotesque.ttf");
 }
 
+@font-face {
+    font-family: "neuemachina-inktrapregular";
+    src: url("../fonts/PPNeueMachina-InktrapRegular.otf");
+}
+
+@font-face {
+    font-family: "oradano-mincho-gsrr";
+    src: url("../fonts/OradanoGSRR.ttf");
+}
+
 /* HTML OBJECTS */
 
 body {
@@ -13,10 +23,7 @@ body {
     left: 0;
     padding: 0;
     margin: 0;
-    font-family: "ta-yuka", sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: 0.02em;
+    font-family: "neuemachina-inktrapregular", sans-serif;
     color: white;
     cursor: default;
 }
@@ -37,6 +44,10 @@ header {
     right: 0;
     left: 0;
     height: 35px;
+    font-family: "neuemachina-inktrapregular", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
     opacity: 1;
     border-bottom: 1px solid white;
 }
@@ -59,6 +70,10 @@ footer {
     right: 0;
     left: 0;
     height: 35px;
+    font-family: "neuemachina-inktrapregular", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
     opacity: 1;
     border-top: 1px solid white;
 }
@@ -113,11 +128,11 @@ section .scroll div:nth-child(2) {
 /* ID ELEMENTS */
 
 #about {
+    display: block;
     position: absolute;
-    top: 9px;
+    top: 12px;
     left: 10px;
     width: calc(25% - 10px);
-    display: block;
     border-right: 1px solid white;
     cursor: pointer;
 }
@@ -129,6 +144,8 @@ section .scroll div:nth-child(2) {
     height: 0;
     margin-top: 0px;
     border-right: 1px solid white;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 #about-overview {
@@ -159,12 +176,12 @@ section .scroll div:nth-child(2) {
 }
 
 #gallery {
+    display: block;
     position: absolute;
-    top: 9px;
+    top: 12px;
     right: 10px;
     width: calc(25% - 10px);
     text-align: right;
-    display: block;
     border-left: 1px solid white;
     cursor: pointer;
 }
@@ -177,6 +194,12 @@ section .scroll div:nth-child(2) {
     height: 0;
     margin-top: 0px;
     border-left: 1px solid white;
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+
+#gallery-table {
+    height: 100%;
 }
 
 #picture {
@@ -184,7 +207,7 @@ section .scroll div:nth-child(2) {
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 85px;
+    margin-top: 80px;
     border: 1px dotted white;
     user-select: none;
 }
@@ -202,19 +225,18 @@ section .scroll div:nth-child(2) {
 
 #signature {
     display: block;
-    bottom: 0;
-    width: 65%;
-    margin-top: 20%;
-    margin-left: 50%;
+    width: 75%;
+    margin-top: 15%;
+    margin-left: 45%;
     user-select: none;
 }
 
 #container {
+    display: block;
     position: fixed;
     width: 100%;
     height: calc(100% - 72px);
     margin-top: 36px;
-    display: block;
     opacity: 1;
 }
 
@@ -223,42 +245,47 @@ section .scroll div:nth-child(2) {
     cursor: none;
 }
 
-#location {
+#resume {
+    display: block;
     position: absolute;
-    bottom: 6px;
+    bottom: 5px;
     left: 10px;
     width: 17%;
-    display: block;
     border-right: 1px solid white;
 }
 
 #subject {
+    display: block;
     position: absolute;
-    bottom: 6px;
+    bottom: 5px;
     left: 17%;
     width: 33%;
     text-align: center;
-    display: block;
     border-right: 1px solid white;
 }
 
-#resume {
+#location {
+    display: block;
     position: absolute;
-    bottom: 6px;
+    bottom: 5px;
     right: 17%;
     width: 33%;
     text-align: center;
-    display: block;
 }
 
 #contact {
+    display: block;
     position: absolute;
-    bottom: 6px;
+    bottom: 5px;
     right: 10px;
     width: 17%;
     text-align: right;
-    display: block;
     border-left: 1px solid white;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    display: none;
 }
 
 /* ANIMATIONS */
@@ -279,9 +306,34 @@ section .scroll div:nth-child(2) {
     }
 }
 
-/* FOUC */
+/* RESPONSIVE HEADER & FOOTER */
+
+@media screen and (max-width: 768px) {
+    #about {
+        width: calc(50% - 10px);
+    }
+    #gallery {
+        width: calc(50% - 10px);
+        border: none;
+    }
+    #subject {
+        display: none;
+    }
+    #location {
+        display: none;
+    }
+    #contact {
+        width: calc(50% - 10px);
+    }
+    #resume {
+        border: none;
+    }
+}
+
+/* FOUC, RENDERING */
 
 html {
+    text-rendering: optimizeLegibility;
     visibility: visible;
     opacity: 1;
 }

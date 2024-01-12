@@ -4,6 +4,7 @@
 
         <style>html{visibility: hidden; opacity: 0;}</style>
         <meta charset="utf-8"/>
+        <meta name="google" content="notranslate">
         <!-- <link rel="icon" href ="favicon.ico" type="image/x-icon"/> -->
         <title> adi s. </title>
 
@@ -13,21 +14,11 @@
         <script type="text/javascript" src="assets/js/rhill-voronoi-core.js" defer></script>
         <script type="text/paperscript" canvas="centerfold" src="assets/js/render-voronoi.js" defer></script>
         <script src="assets/js/main.js" defer></script>
-        <script>
-            (function(d) {
-              var config = {
-                kitId: 'dve7djj',
-                scriptTimeout: 3000,
-                async: true
-              },
-              h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-            })(document);
-        </script>
         
     </head>
-    <body>
+    <body id="body">
 
-        <header class="header">
+        <header id="header" class="header">
             <div id="about" onclick="leftSidebarTrigger()">adi s.</div>
             <div id="about-sidebar">
                 <div id="about-overview" class="about-sidebar-container">
@@ -67,9 +58,19 @@
 
             <div id="gallery" onclick="rightSidebarTrigger()">est. 2001</div>
             <div id="gallery-sidebar">
-                    <img id="picture" class="gallery-sidebar-container" src="assets/images/current.webp" draggable=false>
-                    <p id="caption" class="gallery-sidebar-container">Point Reyes Station, California<br>2023</p>
-                    <img id="signature" class="gallery-sidebar-container" src="assets/images/signature.svg" draggable=false>
+                <table id="gallery-table">
+                    <tr>
+                        <th>
+                            <img id="picture" class="gallery-sidebar-container" src="assets/images/current.webp" draggable=false>
+                            <p id="caption" class="gallery-sidebar-container">Point Reyes Station, California<br>November 2023</p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <img id="signature" class="gallery-sidebar-container" src="assets/images/signature.svg" draggable=false>
+                        </th>
+                    </tr>
+                </table>
             </div>
         </header>
 
@@ -79,10 +80,10 @@
             </div>
         </main>
 
-        <footer class="footer">
-            <div id="location">santa rosa, ca</div>
+        <footer id="footer" class="footer">
+            <div id="resume">résumé</div>
             <div id="subject">code @ ?</div>
-            <div id="resume">resume</div>
+            <div id="location">santa rosa, ca</div>
             <div id="contact">contact</div>
         </footer>
 
